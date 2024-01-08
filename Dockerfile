@@ -20,12 +20,12 @@ RUN \
   echo "**** install requestrr ****" && \
   mkdir -p /app/requestrr/bin && \
   if [ -z ${REQUESTRR_RELEASE+x} ]; then \
-    REQUESTRR_RELEASE=$(curl -sX GET "https://api.github.com/repos/darkalfx/requestrr/releases/latest" \
+    REQUESTRR_RELEASE=$(curl -sX GET "https://api.github.com/repos/thomst08/requestrr/releases/latest" \
     | awk '/tag_name/{print $4;exit}' FS='[""]'); \
   fi && \
   curl -o \
     /tmp/requestrr.zip -L \
-    "https://github.com/darkalfx/requestrr/releases/download/${REQUESTRR_RELEASE}/requestrr-linux-x64.zip" && \
+    "https://github.com/thomst08/requestrr/releases/download/${REQUESTRR_RELEASE}/requestrr-linux-x64.zip" && \
   unzip \
     /tmp/requestrr.zip -d \
     /tmp/requestrr && \
